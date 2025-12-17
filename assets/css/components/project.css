@@ -1,0 +1,83 @@
+.project {
+    padding: 80px 60px;
+    background-color: var(--bg-color-secondary);
+}
+
+.project__header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.project__badge {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 0.4rem 1.25rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: var(--muted-text);
+}
+
+.project__subtitle {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--muted-text);
+}
+
+.project__list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.project__card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.project__card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.project__card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.project__name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.project__role {
+    font-size: 0.85rem;
+    color: var(--muted-text);
+}
+
+.project__company {
+    font-size: 0.8rem;
+    color: var(--muted-text);
+    white-space: nowrap;
+}
+
+.project__points {
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.project__points li {
+    font-size: 0.9rem;
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}

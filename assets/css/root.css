@@ -1,0 +1,84 @@
+/* component sss */
+@import url('./components/navbar.css');
+@import url('./components/hero.css');
+@import url('./components/about.css');
+@import url('./components/footer.css');
+@import url('./components/skills.css');
+@import url('./components/project.css');
+@import url('./components/contact.css');
+
+/* =========================
+   THEME VARIABLES
+   ========================= */
+
+/* Light Theme (default) */
+:root {
+    --bg-color-primary: #fff;
+    --bg-color-secondary: #FAF7F2;
+    --text-color: #1f2937;
+    --muted-text: #6b7280;
+
+    --card-bg: #ffffff;
+    --border-color: #e5e7eb;
+
+    --primary: #f97316;
+    /* orange accent */
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --bg-color-primary: #030712;
+    --bg-color-secondary: #111827;
+
+    --text-color: #e5e7eb;
+    --muted-text: #9ca3af;
+
+    --card-bg: #020617;
+    --border-color: #1e293b;
+
+    --primary: #fb923c;
+}
+
+.theme-toggle {
+    background: transparent !important;
+    border: none;
+    padding: 0.25rem 0.5rem;
+}
+
+.theme-toggle i {
+    color: var(--text-color) !important;
+    font-size: 1.2rem;
+    transition: color 0.25s ease, transform 0.3s ease;
+}
+
+.theme-toggle:hover i {
+    color: var(--primary);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 90px; /* navbar height */
+}
+
+
+[data-theme="dark"] .theme-toggle i {
+    transform: rotate(180deg);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: system-ui, sans-serif;
+    transition: background-color 3s ease, color 3s ease;
+}
+
+p {
+    color: var(--muted-text);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

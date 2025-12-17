@@ -1,0 +1,4 @@
+.footer{
+    background-color: var(--bg-color-primary) !important;
+    color: var(--text-color);
+}

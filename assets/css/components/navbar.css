@@ -1,0 +1,24 @@
+.navbar {
+    padding: 20px 60px !important;
+    background-color: var(--bg-color-primary) !important;
+}
+
+.navbar__logo {
+    font-size: 1.75rem;
+    color: var(--text-color);
+}
+
+.nav-link {
+    color: var(--text-color) !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+.nav-link.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
