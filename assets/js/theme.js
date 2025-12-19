@@ -8,14 +8,12 @@ const updateThemeIcon = (theme) => {
             : "bi bi-moon-fill";
 };
 
-// Load saved theme
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme) {
     document.documentElement.setAttribute("data-theme", savedTheme);
     updateThemeIcon(savedTheme);
 }
 
-// Toggle theme (event delegation safe)
 document.addEventListener("click", (e) => {
     const btn = e.target.closest("#theme-toggle");
     if (!btn) return;

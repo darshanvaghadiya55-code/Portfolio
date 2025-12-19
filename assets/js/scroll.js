@@ -1,20 +1,35 @@
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav-link");
+document.addEventListener("includesLoaded", () => {
+    const navbar = document.querySelector(".navbar");
+    const navHeight = navbar?.offsetHeight || 100;
 
-window.addEventListener("scroll", () => {
-    let current = "";
+    const validIds = ["hero", "about", "skills", "project", "contact"];
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
-        if (pageYOffset >= sectionTop) {
-            current = section.getAttribute("id");
+    const sections = [...document.querySelectorAll("section[id]")]
+        .filter(s => validIds.includes(s.id));
+
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                const id = entry.target.id;
+
+                navLinks.forEach(link => {
+                    link.classList.toggle(
+                        "active",
+                        link.getAttribute("href") == `#${id}`
+                    );
+                });
+            });
+        },
+        {
+            rootMargin: `-${navHeight}px 0px -55% 0px`,
+            threshold: 0.01
         }
-    });
+    );
 
-    navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${current}`) {
-            link.classList.add("active");
-        }
-    });
+    sections.forEach(section => observer.observe(section));
 });
+

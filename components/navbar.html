@@ -1,29 +1,36 @@
-<section id="navbar">
+<div id="navbar" class="navbar-wrapper animate animate--down">
     <nav class="navbar navbar-expand-md">
-        <div class="navbar__logo fw-bold">Darshan | Full-Stack Developer</div>
-    
-        <div class="d-flex align-items-center ms-auto gap-3">
-            <ul class="navbar-nav gap-3">
+        <!-- Logo -->
+        <a href="#hero" class="text-decoration-none ms-2">
+            <span class="navbar__logo">
+                &#60; Darshan /&#62;
+            </span>
+        </a>
+
+        <!-- Mobile toggle -->
+        <button class="navbar-toggler border-0 theme-toggler me-2" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav ms-auto align-items-md-center gap-3 text-center">
+                <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#project">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#skills">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#project">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
+                    <button id="theme-toggle" class="btn btn-sm theme-toggle " aria-label="Toggle dark mode">
+                        <i class="bi bi-moon-fill fs-"></i>
+                    </button>
                 </li>
             </ul>
-    
-            <button id="theme-toggle" class="btn btn-sm theme-toggle" aria-label="Toggle theme">
-                <i class="bi bi-moon-fill"></i>
-            </button>
         </div>
+
     </nav>
-</section>
+</div>

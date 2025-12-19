@@ -1,46 +1,16 @@
 .about {
     padding: 80px 60px;
     background-color: var(--bg-color-secondary);
+    color: var(--text-color);
 }
 
-.about__header {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 3rem;
-}
-
-.about__badge {
-    background-color: var(--card-bg);
-    color: var(--muted-text);
-    padding: 0.5rem 1.5rem;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    border: 1px solid var(--border-color);
-}
-
-.about__image {
-    width: 100%;
+.about-image {
     max-height: 650px;
     object-fit: contain;
-    border-radius: 12px;
 }
 
-.about__title {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1.25rem;
-    color: var(--text-color);
-}
-
-.about__text {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: var(--muted-text);
-    margin-bottom: 1rem;
-}
-
-.about__cta {
-    margin-top: 1.25rem;
-    color: var(--text-color);
-    font-weight: 500;
+@media (max-width: 767px) {
+    .about {
+        padding: 10px !important;
+    }
 }

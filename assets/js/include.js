@@ -1,30 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const components = {
-        navbar: "components/navbar.html",
-        hero: "components/hero.html",
-        about: "components/about.html",
-        skills: "components/skills.html",
-        project: "components/project.html",
-        contact: "components/contact.html",
-        footer: "components/footer.html",
-    };
+async function loadIncludes() {
+    const includes = document.querySelectorAll("[id]");
 
-    Object.entries(components).forEach(([id, path]) => {
-        const container = document.getElementById(id);
-        if (!container) return;
+    for (const el of includes) {
+        const file = `components/${el.id}.html`;
+        try {
+            const res = await fetch(file);
+            el.innerHTML = await res.text();
+        } catch (e) {
+            console.warn(`Failed to load ${file}`);
+        }
+    }
+    document.dispatchEvent(new Event("includesLoaded"));
+}
 
-        fetch(path)
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error(`Failed to load ${path}`);
-                }
-                return response.text();
-            })
-            .then((html) => {
-                container.innerHTML = html;
-            })
-            .catch((error) => {
-                console.error(`${id} load failed:`, error);
-            });
-    });
-});
+loadIncludes();
+
